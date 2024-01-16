@@ -1,0 +1,58 @@
+let and const exercise
+====================================================
+
+var PI = 3.14;
+PI = 42;
+
+   In order to prevent this, use 'const' for PI, which
+won't let the value of PI be redeclared.
+
+----------------------------------------------------
+
+1.    You can redeclare a variable created with 'var':
+
+   var banana = 'fruit';
+   var banana = 'food';
+
+   And you can change its value:
+
+   var happy = true;
+   happy = false;
+
+   A variable created with 'let' can have its value changed, but you
+   can't reclare it.
+
+2.    A variable created with 'const' cannot be redeclared, and you also can't change
+   the value assigned to it. A variable created with 'var' can both be redeclared and have
+   its value reassigned.
+
+3.    Variables created with 'let' and 'const' both cannot be redeclared, and only 'let' 
+   values can be reassigned.
+
+4.    In JavaScript, a variable's value will be accessible in the scope they're declared in.
+   In other words, if a variable is declared as the first line of your code, all subsequent
+   code, regardless of what functions or events it's nested in, can access that variable and
+   use the value:
+
+   let number = 40;
+   function showNumber(){
+   	console.log(number);
+   }
+
+   This showNumber() function will show 40, even though 'number' isn't declared inside the 
+   function. This continues through however many layers of nesting, such as a variable
+   declared outside a loop can be used inside the loop, but a variable declared inside a loop
+   can't be used outside of it.
+
+      With 'let' and 'const', you can't access a variable declared after it's referenced:
+
+   console.log(number);
+   let number = 40;
+
+   This will return an error, as we're trying to access 'number' before it's declared.
+   Whereas with 'var', you can reference a number before it's declared, but it will return
+   'undefined', because no value has been assigned to it yet:
+
+   console.log(number); // undefined
+   var number = 40;
+   console.log(number); // 40
